@@ -1,0 +1,39 @@
+{
+  "database": "Dooku",
+  "files": [
+  {
+    "filename": "file1.sql",
+    "queries": [
+      {
+        "id": 1,
+        "reads": [
+          "dw.Months",
+          "fact.sales_EUR",
+          "fact.sales_NAM"
+        ],
+        "inserts": [
+          "dw.DimCustomers"
+        ],
+        "deletes": [
+          "dw.temp"
+        ]
+      },
+      {
+        "id": 2,
+        "reads": ["dw.DimCustomers", "fact.raw_sales"],
+        "updates": ["fact.Sales"]
+      }
+    ]
+  },
+    {"filename": "file2.sql",
+      "queries": [
+        {
+          "id": 1,
+          "reads": ["dw.Months", "dw.DimCustomers", "fact.SAles"],
+          "inserts": ["viz.SalesSummary"]
+        }
+      ]
+
+    }
+]
+}
